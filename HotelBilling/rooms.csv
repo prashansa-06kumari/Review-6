@@ -1,0 +1,6 @@
+ReservationId,RoomType,Nights,AmenityCodes
+R1,Deluxe,3,WIFI;SPA
+R2,Suite,0,WIFI
+R3,Standard,2,GYM
+R4,Deluxe,4,WIFI;POOL9
+R5,Suite,5,SPA;GYM

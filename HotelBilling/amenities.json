@@ -1,0 +1,20 @@
+{
+  "amenities": [
+    {
+      "code": "WIFI",
+      "price": 0
+    },
+    {
+      "code": "SPA",
+      "price": 1500
+    },
+    {
+      "code": "GYM",
+      "price": 500
+    },
+    {
+      "code": "POOL",
+      "price": 800
+    }
+  ]
+}
