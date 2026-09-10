@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection.Metadata;
 using System.Text;
-using System.Text;
 using System.Text.Json;
 using System.Xml.Linq;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -76,8 +75,7 @@ namespace HotelBilling
             return records;
 
         }
-        public MemoryStream StageRecords(
-            List<Reservation> records)
+        public MemoryStream StageRecords(List<Reservation> records)
         {
             MemoryStream memory =new MemoryStream();
 
@@ -99,9 +97,7 @@ namespace HotelBilling
             MemoryStream memory)
         {
             List<Reservation> verified =new List<Reservation>();
-
             using BinaryReader reader =new BinaryReader( memory,Encoding.UTF8,true);
-
             while (memory.Position < memory.Length)
             {
                 string id = reader.ReadString();
@@ -111,7 +107,6 @@ namespace HotelBilling
                 decimal storedTotal=reader.ReadDecimal();
 
                 Reservation reservation =new Reservation(id,roomType,nights,amenities);
-
                 decimal calculatedTotal =validation.CalculateTotal(reservation);
                 if (calculatedTotal==storedTotal)
                 {
@@ -122,8 +117,7 @@ namespace HotelBilling
             return verified;
         }
         public void WriteBillingFile(
-            List<Reservation> records,
-            string file)
+            List<Reservation> records, string file)
         {
             using FileStream fs =new FileStream(file, FileMode.Create);
             JsonSerializer.Serialize(fs,records,
@@ -133,8 +127,7 @@ namespace HotelBilling
                 });
         }
         public void WriteRevenueReport(
-            List<Reservation> records,
-            string file)
+            List<Reservation> records,string file)
         {
             decimal revenue = 0;
             foreach (Reservation reservation in records)
